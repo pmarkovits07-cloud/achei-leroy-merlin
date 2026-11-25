@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Achei! · seu guia na loja</title>
+  <meta name="description" content="Assistente para encontrar produtos e resolver problemas dentro da loja Leroy Merlin. MVP do Challenge FIAP 2026.">
+  <meta name="theme-color" content="#16553A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2316553A'/%3E%3Cpath d='M32 12a14 14 0 0 0-14 14c0 10 14 26 14 26s14-16 14-26a14 14 0 0 0-14-14z' fill='%237BC74D'/%3E%3Ccircle cx='32' cy='26' r='5' fill='%2316553A'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-in">
+      <a href="#/" class="marca" aria-label="Achei! início">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#7BC74D"/><path d="M32 12a14 14 0 0 0-14 14c0 10 14 26 14 26s14-16 14-26a14 14 0 0 0-14-14z" fill="#16553A"/><circle cx="32" cy="26" r="5" fill="#7BC74D"/></svg>
+        <span>Achei!</span>
+      </a>
+      <button class="loja-chip" id="btn-loja" type="button" aria-label="Trocar de loja"></button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <nav class="navbar" aria-label="Navegação principal">
+    <a href="#/" data-rota="inicio"><span aria-hidden="true">🏠</span>Início</a>
+    <a href="#/lista" data-rota="lista"><span aria-hidden="true">📝</span>Minha lista<b id="badge-lista" class="badge" hidden>0</b></a>
+    <a href="#/rota" data-rota="rota"><span aria-hidden="true">🗺️</span>Rota</a>
+    <a href="#/especialista" data-rota="especialista"><span aria-hidden="true">🙋</span>Especialista</a>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="dlg-loja" class="dialogo">
+    <form method="dialog">
+      <h2>Em qual loja você está?</h2>
+      <div id="lista-lojas" class="lista-lojas"></div>
+      <button class="btn sec" value="cancel">Fechar</button>
+    </form>
+  </dialog>
+
+  <script src="dados.js"></script>
+  <script src="ia.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
